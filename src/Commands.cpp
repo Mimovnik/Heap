@@ -19,8 +19,18 @@ void add(List* list) {
     }
 }
 
-void remove(List* list) {}
+void remove(List* list) {
+    int n;
+    std::cin >> n;
+    while (n--) {
+        list->printAt(0);
+        list->pop();
+    }
+}
 
-void print(List* list) {}
+void print(List* list) { list->print(); }
 
-void changeOrdert(List* list) {}
+void changeOrder(List* list) {
+    Person::sortByDate = !Person::sortByDate;
+    Heap::sort(list);
+}

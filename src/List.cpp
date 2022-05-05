@@ -57,12 +57,20 @@ void List::insertAt(int index, TYPE newdata) {
 }
 
 void List::pop() {
+    if (head == tail) {
+        delete head;
+        return;
+    }
     head = head->next;
     delete head->prev;
     head->prev = nullptr;
 }
 
 void List::removeLast() {
+    if (head == tail) {
+        delete head;
+        return;
+    }
     tail = tail->prev;
     delete tail->next;
     tail->next = nullptr;
@@ -104,14 +112,16 @@ Node* List::getByIndex(int index) {
 void List::print() const {
     Node* tmp = head;
     while (tmp != nullptr) {
-        std::cout << tmp->data;
+        std::cout << tmp->data << std::endl;
         tmp = tmp->next;
     }
 }
 
 void List::printAt(int index) {
     Node* current = getByIndex(index);
-    std::cout << current->data << std::endl;
+    if (current != nullptr) {
+        std::cout << current->data << std::endl;
+    }
 }
 
 void List::destroy() {

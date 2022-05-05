@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+bool Person::sortByDate = false;
+
 Person::Person() {}
 
 Person::Person(std::string date, std::string name) {
@@ -23,15 +25,22 @@ bool Person::isOlder(Person& other) {
     oYear = other.date.substr(6, 4);
 
     if (year != oYear) {
-        return year < oYear;
+        return year > oYear;
     }
     if (month != oMonth) {
-        return month < oMonth;
+        return month > oMonth;
     }
-    return day < oDay;
+    return day > oDay;
 }
 
-bool Person::isHigher(Person& other) { return true; }
+bool Person::nameLower(Person& other) { return name > other.name; }
+
+bool Person::operator>(Person& other) {
+    if (sortByDate) {
+        return isOlder(other);
+    }
+    return nameLower(other);
+}
 
 Person& Person::operator=(Person& other) {
     this->date = other.date;
