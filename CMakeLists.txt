@@ -6,6 +6,12 @@ add_library(
 
     src/Heap.h
     src/Heap.cpp
+
+    src/Person.h
+    src/Person.cpp
+
+    src/Commands.h
+    src/Commands.cpp
 )
 
 
