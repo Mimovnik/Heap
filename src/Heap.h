@@ -1,10 +1,12 @@
 #ifndef HEAP_H
 #define HEAP_H
 
+#include "List.h"
+
 class Heap {
-    static void validate(int* array, int n, int parentIndex);
+    static void heapify(List* list, int parentIndex);
    public:
-    static void sort(int* array, int n);
+    static void sort(List* list);
 
 };
 

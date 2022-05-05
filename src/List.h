@@ -2,6 +2,7 @@
 #define LIST_H
 
 #include <iostream>
+
 #include "Person.h"
 #define TYPE Person
 struct Node {
@@ -49,15 +50,8 @@ class List {
     void printAt(int index);
 
     void destroy();
-    
-    List& operator=(List& right){
-        if(this == &right){
-            return *this;
-        }
-        this->head = right.head;
-        this->tail = right.tail;
-        return *this;
-    }
+
+    List& operator=(List& right);
 };
 
 #endif

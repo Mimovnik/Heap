@@ -1,26 +1,26 @@
 #include "Commands.h"
-#include "Heap.h"
 
 #include <iostream>
 #include <string>
 
-void add(Heap* heap){
+#include "Heap.h"
+#include "Person.h"
+
+void add(List* list) {
     int n;
     std::cin >> n;
-    while(n--){
+    while (n--) {
         std::string date, name;
         std::cin >> date >> name;
+
+        list->append(Person(date, name));
+
+        Heap::sort(list);
     }
 }
 
-void remove(Heap* heap){
+void remove(List* list) {}
 
-}
+void print(List* list) {}
 
-void print(Heap* heap){
-
-}
-
-void changeOrdert(Heap* heap){
-
-}
+void changeOrdert(List* list) {}

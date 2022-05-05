@@ -5,6 +5,15 @@ List::List() {
     tail = nullptr;
 }
 
+List& List::operator=(List& right) {
+    if (this == &right) {
+        return *this;
+    }
+    this->head = right.head;
+    this->tail = right.tail;
+    return *this;
+}
+
 void List::append(TYPE newdata) {
     Node* tmp = new Node(newdata);
     if (head == nullptr) {
@@ -64,7 +73,7 @@ void List::removeAt(int index) {
         pop();
         return;
     }
-    if (index == getSize()-1) {
+    if (index == getSize() - 1) {
         removeLast();
         return;
     }

@@ -12,6 +12,9 @@ add_library(
 
     src/Commands.h
     src/Commands.cpp
+
+    src/List.h
+    src/List.cpp
 )
 
 

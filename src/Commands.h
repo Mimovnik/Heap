@@ -1,8 +1,9 @@
-#include "Heap.h"
+#include "List.h"
 
-void add(Heap* heap);
+void add(List* list);
 
-void remove(Heap* heap);
+void remove(List* list);
 
-void print(Heap* heap);
-void changeOrder(Heap* heap);
+void print(List* list);
+
+void changeOrder(List* list);
